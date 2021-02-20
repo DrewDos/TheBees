@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace TheBees.GameRom
+{
+    static class RomSpec
+    {
+        public static byte[] BaseChecksum = new byte[] { 0xF3, 0xB6, 0xD9, 0xCF, 0x9C, 0xE2, 0x1A, 0x1D, 0x8D, 0x7E, 0x40, 0x86, 0xCC, 0x59, 0x5F, 0xE2 };
+    }
+}

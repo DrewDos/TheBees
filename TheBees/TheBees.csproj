@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D741DAA6-0CD1-4133-9BDE-5F7AE7799EFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheBees</RootNamespace>
+    <AssemblyName>TheBees</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDataHandler.cs" />
+    <Compile Include="Clipboard\Clipboard.cs" />
+    <Compile Include="Clipboard\ClipboardItem.cs" />
+    <Compile Include="Clipboard\DataNode\ClipItemDataNode.cs" />
+    <Compile Include="Controls\ActionDataListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BitEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BitEdit.Designer.cs">
+      <DependentUpon>BitEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Color\ColorSelection.cs" />
+    <Compile Include="Color\ColorIndex.cs" />
+    <Compile Include="Controls\DataToolset\ActionDataToolset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataToolset\ActionToolset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataToolset\RawSoundToolset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataToolset\DataToolConfig.cs" />
+    <Compile Include="Controls\Sound\RawSoundDataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sound\RawSoundDataPanel.Designer.cs">
+      <DependentUpon>RawSoundDataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sound\RawSoundGuidePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sound\RawSoundGuidePanel.Designer.cs">
+      <DependentUpon>RawSoundGuidePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sound\SoundEffectPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sound\SoundEffectPanel.Designer.cs">
+      <DependentUpon>SoundEffectPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sound\SoundNodePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sound\SoundNodePanel.Designer.cs">
+      <DependentUpon>SoundNodePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MappedRecordableList.cs" />
+    <Compile Include="Data\RecordableObservable.cs" />
+    <Compile Include="Data\Records\RecordableObserver.cs" />
+    <Compile Include="Data\Node\Copy of DataNode.cs" />
+    <Compile Include="Data\Node\INodeList.cs" />
+    <Compile Include="Data\Node\NodeGroupHandler.cs" />
+    <Compile Include="Data\Node\NodeSequence.cs" />
+    <Compile Include="Data\Node\NodeSuppleValue.cs" />
+    <Compile Include="Data\Node\NodeValueRange.cs" />
+    <Compile Include="Data\RecordableMoveParams.cs" />
+    <Compile Include="Data\Records\DataOpSummary.cs" />
+    <Compile Include="Data\Records\SpaceGroupSummary.cs" />
+    <Compile Include="Data\Records\RecordSpaceGroup.cs" />
+    <Compile Include="Data\RomDataBlock.cs" />
+    <Compile Include="Debugging.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateLookup.Designer.cs">
+      <DependentUpon>CreateLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateRegion.Designer.cs">
+      <DependentUpon>CreateRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateSessionRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graphics\CreateSessionRef.Designer.cs">
+      <DependentUpon>CreateSessionRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graphics\RemoveSprites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graphics\RemoveSprites.Designer.cs">
+      <DependentUpon>RemoveSprites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Graphics\SpriteManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Graphics\SpriteManager.Designer.cs">
+      <DependentUpon>SpriteManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActionEditTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAcceleration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAcceleration.Designer.cs">
+      <DependentUpon>ModifyAcceleration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\FunctionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\FunctionView.Designer.cs">
+      <DependentUpon>FunctionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\NewActionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\NewActionDialog.Designer.cs">
+      <DependentUpon>NewActionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\ReferenceQueue.cs" />
+    <Compile Include="Forms\ModifyAction\SpriteSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\SpriteSelector.Designer.cs">
+      <DependentUpon>SpriteSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\BankConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\BankConfig.Designer.cs">
+      <DependentUpon>BankConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\EditCommandName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\EditCommandName.Designer.cs">
+      <DependentUpon>EditCommandName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyEnemyCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyEnemyCtrl.Designer.cs">
+      <DependentUpon>ModifyEnemyCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyOrbitalBasis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyOrbitalBasis.Designer.cs">
+      <DependentUpon>ModifyOrbitalBasis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyPallets\ColorAdjuster.cs" />
+    <Compile Include="Forms\ModifyPallets\PalletModifier.cs" />
+    <Compile Include="Controls\DataToolset\PropertyToolset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\RecordSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecordSummary.Designer.cs">
+      <DependentUpon>RecordSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sound\ConvertWav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sound\ConvertWav.Designer.cs">
+      <DependentUpon>ConvertWav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sound\SoundEffectManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sound\SoundEffectManager.Designer.cs">
+      <DependentUpon>SoundEffectManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Support\DirectionalKeyAction.cs" />
+    <Compile Include="Forms\Support\DataControl\DataControl.cs" />
+    <Compile Include="Forms\Support\DataControl\DataControlEventParams.cs" />
+    <Compile Include="Forms\Support\DataControl\DataControlSet.cs" />
+    <Compile Include="Forms\Support\DataControl\DataControlFactory.cs" />
+    <Compile Include="Forms\Support\DataControl\DerivedControls\DataControlBitEdit.cs" />
+    <Compile Include="Forms\Support\DataControl\DerivedControls\DataControlCheckBox.cs" />
+    <Compile Include="Forms\Support\DataControl\DerivedControls\DataControlComboBox.cs" />
+    <Compile Include="Forms\Support\DataControl\DerivedControls\DataControlRadioSet.cs" />
+    <Compile Include="Data\Node Support\DataNodeEventParams.cs" />
+    <Compile Include="Controls\DataToolset\DataToolset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataToolset\DataToolset.Designer.cs">
+      <DependentUpon>DataToolset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Base\ControlSetParams.cs" />
+    <Compile Include="Forms\Tabs\Base\NodeLayoutControlSet.cs" />
+    <Compile Include="Forms\Tabs\Base\PropertyLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\CancelConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\CancelConfig.Designer.cs">
+      <DependentUpon>CancelConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCReference.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCReference.Designer.cs">
+      <DependentUpon>FCReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCBasic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCBasic.Designer.cs">
+      <DependentUpon>FCBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FunctionCallPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FunctionCallPanel.Designer.cs">
+      <DependentUpon>FunctionCallPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCReferenceSettings.cs" />
+    <Compile Include="Forms\Tabs\Character Unit\Detailed Property\SupportGfxPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Detailed Property\SupportGfxPanel.Designer.cs">
+      <DependentUpon>SupportGfxPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabEnemyCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabEnemyCtrl.Designer.cs">
+      <DependentUpon>TabEnemyCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Throws\ThrownOpponentPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Throws\ThrownOpponentPanel.Designer.cs">
+      <DependentUpon>ThrownOpponentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Description\DescriptionBody.cs" />
+    <Compile Include="Forms\Support\IModifyForm.cs" />
+    <Compile Include="Forms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\ModfyCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\ModfyCommand.Designer.cs">
+      <DependentUpon>ModfyCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Support\ActiveData.cs" />
+    <Compile Include="Forms\Support\FormIndex.cs" />
+    <Compile Include="Forms\ModifyAction\DataPanel.cs" />
+    <Compile Include="Forms\ModifyPallets\ModifyCharacterPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyPallets\ModifyPallesSprites.Designer.cs">
+      <DependentUpon>ModifyCharacterPallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifySAEffect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifySAEffect.Designer.cs">
+      <DependentUpon>ModifySAEffect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Panels\PanelMissileConfig.cs" />
+    <Compile Include="Forms\Panels\PanelMotion.cs" />
+    <Compile Include="Forms\SupportGraphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SupportGraphics.Designer.cs">
+      <DependentUpon>SupportGraphics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Collision\CollisionLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Collision\CollisionLayout.Designer.cs">
+      <DependentUpon>CollisionLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Collision\CollisionRelay.cs" />
+    <Compile Include="Forms\Tabs\Character Unit\Action\TabActionHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\TabActionHeader.Designer.cs">
+      <DependentUpon>TabActionHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\External Property\TabSAEffect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\External Property\TabSAEffect.Designer.cs">
+      <DependentUpon>TabSAEffect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Command\TabCommandLever.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Command\TabCommandLever.Designer.cs">
+      <DependentUpon>TabCommandLever.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Base\NodeLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabAccel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabAccel.Designer.cs">
+      <DependentUpon>TabAccel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabAttackDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Simple Property\TabAttackDetails.Designer.cs">
+      <DependentUpon>TabAttackDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Collision\TabCollision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Collision\TabCollision.Designer.cs">
+      <DependentUpon>TabCollision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Projectile\TabMissileConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Projectile\TabMissileConfig.Designer.cs">
+      <DependentUpon>TabMissileConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\TabMotion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Action\TabMotion.Designer.cs">
+      <DependentUpon>TabMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Command\TabCommandHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tabs\Character Unit\Command\TabCommandHeader.Designer.cs">
+      <DependentUpon>TabCommandHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\ModifyUserCommand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyCommand\ModifyUserCommand.Designer.cs">
+      <DependentUpon>ModifyUserCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyMissile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyMissile.Designer.cs">
+      <DependentUpon>ModifyMissile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpriteView\SpriteViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpriteView\SpriteViewer.Designer.cs">
+      <DependentUpon>SpriteViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\ModifyAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\ModifyAction.Designer.cs">
+      <DependentUpon>ModifyAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModifyAction\ModifyAction.General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Panels\NodePanel.cs" />
+    <Compile Include="Forms\Panels\PanelUnknown.cs" />
+    <Compile Include="Forms\ThrownOpponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ThrownOpponent.Designer.cs">
+      <DependentUpon>ThrownOpponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Support\UnitOption.cs" />
+    <Compile Include="Description\DescriptorRef.cs" />
+    <Compile Include="Forms\Verification\IVerifyHandler.cs" />
+    <Compile Include="Forms\Verification\VerifyMethod\VerifyManual.cs" />
+    <Compile Include="Forms\Verification\VerifyMethod\VerifyControl.cs" />
+    <Compile Include="Forms\Verification\VerifyResult.cs" />
+    <Compile Include="Forms\Verification\VerifyMethod\VerifyHandler.cs" />
+    <Compile Include="Forms\Verification\VerifyObject.cs" />
+    <Compile Include="GameData\GameDataHandler.cs" />
+    <Compile Include="GameData\RomFixes.cs" />
+    <Compile Include="GameData\StaticDescriptor.cs" />
+    <Compile Include="Data\Node\SuppleValue.cs" />
+    <Compile Include="Data\Node\SuppleValueRange.cs" />
+    <Compile Include="Data\Records\BaseRecord.cs" />
+    <Compile Include="Data\Records\Record.cs" />
+    <Compile Include="Data\Records\Recordable.cs" />
+    <Compile Include="Data\Records\TileDataRecord.cs" />
+    <Compile Include="Sound\SampleBlock\SampleDataGroup.cs" />
+    <Compile Include="Sound\RawSampleHeader\SampleHeaderMap.cs" />
+    <Compile Include="Sound\RawSampleHeader\RawSampleGroup.cs" />
+    <Compile Include="Sound\SampleBlock\SampleBlock.cs" />
+    <Compile Include="Sound\SampleBlock\SampleDataMap.cs" />
+    <Compile Include="Sound\SoundEffect\SampleNode.cs" />
+    <Compile Include="Sound\SoundEffect\SoundEffectGroup.cs" />
+    <Compile Include="Sound\SoundEffect\SoundEffectMap.cs" />
+    <Compile Include="Sprites\LookupBlock.cs" />
+    <Compile Include="Sprites\SpriteMap.cs" />
+    <Compile Include="Sprites\SpriteMap\SpriteDataHandler.cs" />
+    <Compile Include="Sprites\TileDataBlock.cs" />
+    <Compile Include="Unit\Node\InputConfig.cs" />
+    <Compile Include="Unit\Node\Motion\CancelSpec.cs" />
+    <Compile Include="Unit\Node\SuperArtSettings.cs" />
+    <Compile Include="Unit\UnitEntity\ActionDebug.cs" />
+    <Compile Include="Unit\UnitEntity\FunctionCall\FunctionMap.cs" />
+    <Compile Include="Unit\UnitEntity\FunctionCall\FunctionType.cs" />
+    <Compile Include="Unit\UnitEntity\Unit\UnitAction\ActionIndexRef.cs" />
+    <Compile Include="Unit\DisplayHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\ActionHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\ActionNode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\CommandHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\FunctionCall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\Motion\Motion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\SupportGraphicSpec.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\SupportGraphicSpecExt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\Node\ThrownOpponent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\OrbitalBasis\OrbitalBasisGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\OrbitalBasis\OrbitalBasisHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\OrbitalBasis\OrbitalBasisRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UnitAction\ActionLengthRef.cs" />
+    <Compile Include="Unit\UnitEntity\Character\UnitCharacter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Character\UnitCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\CommandSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Missile\UnitMissile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\PropertyMax\PropertyMaxGet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\PropertyMax\PropertyMaxHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Support\UnitDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Support\UnitHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\UnitSpec.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UnitAction\Action.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UnitAction\ActionGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\GroupType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\MissilePropertyLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\PropertyGroup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\PropertyLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\Unit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UnitBackup.cs" />
+    <Compile Include="Unit\UnitEntity\Unit\UnitPalletSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UnitPropertyLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Unit\UnitEntity\Unit\UserCommandMap.cs" />
+    <Compile Include="User\ActionGuide\BaseActionLengths.cs" />
+    <Compile Include="User\RecordGuide\IHasBaseRecords.cs" />
+    <Compile Include="User\RecordGuide\RecordFile.cs" />
+    <Compile Include="User\RecordGuide\RecordGuide.cs" />
+    <Compile Include="Data\Records\RecordSpace.cs" />
+    <Compile Include="Data\Records\RecordSpec.cs" />
+    <Compile Include="Data\Records\SpriteRecord.cs" />
+    <Compile Include="Data\RomSpec.cs" />
+    <Compile Include="General\Delegates.cs" />
+    <Compile Include="General\Helper.cs" />
+    <Compile Include="General\ICustomObservable.cs" />
+    <Compile Include="General\NotifyParams.cs" />
+    <Compile Include="General\Observable.cs" />
+    <Compile Include="General\Ref.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Forms\Graphics\File\LoadHandler.cs" />
+    <Compile Include="Controls\PalletControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PalletControl.Designer.cs">
+      <DependentUpon>PalletControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GameData\PalletSet.cs" />
+    <Compile Include="Forms\Graphics\File\SaveHandler.cs" />
+    <Compile Include="RomUtilities.cs" />
+    <Compile Include="Sprites\Converter\Helper.cs" />
+    <Compile Include="Sprites\Converter\ImageConverter.cs" />
+    <Compile Include="Sprites\Converter\PalletFile.cs" />
+    <Compile Include="Sprites\Converter\SpriteRomInfo.cs" />
+    <Compile Include="Sprites\Converter\TileDataBlock.cs" />
+    <Compile Include="Sprites\Converter\TileGroup.cs" />
+    <Compile Include="Sprites\Graphics\NormalSpriteDef.cs" />
+    <Compile Include="Sprites\Graphics\TileDef.cs" />
+    <Compile Include="Sprites\Graphics\TileGroupDef.cs" />
+    <Compile Include="User\IUserMap.cs" />
+    <Compile Include="Sprites\SpriteMap\LookupTag.cs" />
+    <Compile Include="Sprites\SpriteMap\ProblemIndexes.cs" />
+    <Compile Include="Sprites\SpriteMap\SpriteSessionRef.cs" />
+    <Compile Include="Sprites\SpriteMap\SpriteRegion.cs" />
+    <Compile Include="Sprites\SpriteTest\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sprites\SpriteTest\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprites\SpriteTest\Graphics\LargeSprite.cs" />
+    <Compile Include="Sprites\SpriteTest\Graphics\NormalSprite.cs" />
+    <Compile Include="Sprites\SpriteTest\Graphics\Pallet.cs" />
+    <Compile Include="Sprites\SpriteTest\Graphics\Sprite.cs" />
+    <Compile Include="Sprites\SpriteTest\Helper.cs" />
+    <Compile Include="Sprites\SpriteTest\SpriteHandler.cs" />
+    <Compile Include="Sprites\SpriteTest\SpritePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sprites\SpriteTest\SpritePanel.designer.cs">
+      <DependentUpon>SpritePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Sound\RawSampleHeader\RawSampleHeader.cs" />
+    <Compile Include="Sound\SoundEffect\SoundEffect.cs" />
+    <Compile Include="Sound\SampleSpec.cs" />
+    <Compile Include="Sound\SoundExceptions.cs" />
+    <Compile Include="Sound\SoundTest.cs" />
+    <Compile Include="Sound\Wav.cs" />
+    <Compile Include="Forms\SpriteView\CollisionBox.cs" />
+    <Compile Include="Sprites\Graphics\NormalSprite.cs" />
+    <Compile Include="Sprites\Graphics\Pallet.cs" />
+    <Compile Include="Sprites\Graphics\Sprite.cs" />
+    <Compile Include="Sprites\SpriteHandler.cs" />
+    <Compile Include="Controls\SpritePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SpritePanel.designer.cs">
+      <DependentUpon>SpritePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameData\SpriteSpec.cs" />
+    <Compile Include="Data\Node Support\NodeDataStream.cs" />
+    <Compile Include="Data\Node\NodeUtil.cs" />
+    <Compile Include="User\PropertyGuide\UnitPropertyMax.cs" />
+    <Compile Include="Data\Node\DataNode.cs" />
+    <Compile Include="User\LookupTagGuide.cs" />
+    <Compile Include="User\PropertyGuide\PropertyGuide.cs" />
+    <Compile Include="Data\Node\NodeGroup.cs" />
+    <Compile Include="Data\Node Support\NodeSpec.cs" />
+    <Compile Include="Data\RomData.cs" />
+    <Compile Include="Description\DescSpec.cs" />
+    <Compile Include="Description\DescriptionFile.cs" />
+    <Compile Include="User\ActionGuide\ActionGuide.cs" />
+    <Compile Include="User\RecordTagGuide.cs" />
+    <Compile Include="User\RomGuide.cs" />
+    <Compile Include="User\SpriteSessionGuide.cs" />
+    <Compile Include="User\SpriteRegionGuide.cs" />
+    <EmbeddedResource Include="Controls\BitEdit.resx">
+      <DependentUpon>BitEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PalletControl.resx">
+      <DependentUpon>PalletControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataToolset\DataToolset.resx">
+      <DependentUpon>DataToolset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sound\RawSoundDataPanel.resx">
+      <DependentUpon>RawSoundDataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sound\RawSoundGuidePanel.resx">
+      <DependentUpon>RawSoundGuidePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sound\SoundEffectPanel.resx">
+      <DependentUpon>SoundEffectPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sound\SoundNodePanel.resx">
+      <DependentUpon>SoundNodePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graphics\CreateLookup.resx">
+      <DependentUpon>CreateLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graphics\CreateRegion.resx">
+      <DependentUpon>CreateRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graphics\CreateSessionRef.resx">
+      <DependentUpon>CreateSessionRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graphics\RemoveSprites.resx">
+      <DependentUpon>RemoveSprites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Graphics\SpriteManager.resx">
+      <DependentUpon>SpriteManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAcceleration.resx">
+      <DependentUpon>ModifyAcceleration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAction\FunctionView.resx">
+      <DependentUpon>FunctionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAction\NewActionDialog.resx">
+      <DependentUpon>NewActionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAction\SpriteSelector.resx">
+      <DependentUpon>SpriteSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyCommand\BankConfig.resx">
+      <DependentUpon>BankConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyCommand\EditCommandName.resx">
+      <DependentUpon>EditCommandName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyEnemyCtrl.resx">
+      <DependentUpon>ModifyEnemyCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyOrbitalBasis.resx">
+      <DependentUpon>ModifyOrbitalBasis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecordSummary.resx">
+      <DependentUpon>RecordSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sound\ConvertWav.resx">
+      <DependentUpon>ConvertWav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sound\SoundEffectManager.resx">
+      <DependentUpon>SoundEffectManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\CancelConfig.resx">
+      <DependentUpon>CancelConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCReference.resx">
+      <DependentUpon>FCReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\FunctionCall\FCBasic.resx">
+      <DependentUpon>FCBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\FunctionCall\FunctionCallPanel.resx">
+      <DependentUpon>FunctionCallPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Detailed Property\SupportGfxPanel.resx">
+      <DependentUpon>SupportGfxPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Simple Property\TabEnemyCtrl.resx">
+      <DependentUpon>TabEnemyCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Throws\ThrownOpponentPanel.resx">
+      <DependentUpon>ThrownOpponentPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyCommand\ModfyCommand.resx">
+      <DependentUpon>ModfyCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyPallets\ModifyCharacterPallet.resx">
+      <DependentUpon>ModifyCharacterPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifySAEffect.resx">
+      <DependentUpon>ModifySAEffect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SupportGraphics.resx">
+      <DependentUpon>SupportGraphics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Collision\CollisionLayout.resx">
+      <DependentUpon>CollisionLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\TabActionHeader.resx">
+      <DependentUpon>TabActionHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\External Property\TabSAEffect.resx">
+      <DependentUpon>TabSAEffect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Command\TabCommandLever.resx">
+      <DependentUpon>TabCommandLever.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Simple Property\TabAccel.resx">
+      <DependentUpon>TabAccel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Simple Property\TabAttackDetails.resx">
+      <DependentUpon>TabAttackDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Collision\TabCollision.resx">
+      <DependentUpon>TabCollision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Projectile\TabMissileConfig.resx">
+      <DependentUpon>TabMissileConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Action\TabMotion.resx">
+      <DependentUpon>TabMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tabs\Character Unit\Command\TabCommandHeader.resx">
+      <DependentUpon>TabCommandHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyMissile.resx">
+      <DependentUpon>ModifyMissile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyCommand\ModifyUserCommand.resx">
+      <DependentUpon>ModifyUserCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpriteView\SpriteViewer.resx">
+      <DependentUpon>SpriteViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModifyAction\ModifyAction.resx">
+      <DependentUpon>ModifyAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ThrownOpponent.resx">
+      <DependentUpon>ThrownOpponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Controls\SpritePanel.resx">
+      <DependentUpon>SpritePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\SpriteTest\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sprites\SpriteTest\SpritePanel.resx">
+      <DependentUpon>SpritePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameData\Property\" />
+    <Folder Include="Loaders\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ARROW_DOWN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ARROW_UP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\DISABLE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\COPY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\axis.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
